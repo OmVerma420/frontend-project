@@ -3,7 +3,7 @@
 import React from 'react';
 import { Hero } from '../components/Hero';
 import { motion } from 'framer-motion';
-import { PRODUCTS, FALLBACK_IMAGE } from '../constants';
+import { PRODUCTS, FALLBACK_IMAGE } from '../../constants';
 import { ProductCard } from '../components/ProductCard';
 import { ArrowRight, Play } from 'lucide-react';
 import { Link } from 'react-router-dom';

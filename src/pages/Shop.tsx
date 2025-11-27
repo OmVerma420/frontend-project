@@ -2,7 +2,7 @@
 // @ts-nocheck
 import React, { useState, useMemo, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { PRODUCTS } from '../constants';
+import { PRODUCTS } from '../../constants';
 import { ProductCard } from '../components/ProductCard';
 import { Filter, ChevronDown, Grid, List, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';

@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { PRODUCTS } from '../constants';
+import { PRODUCTS } from '../../constants';
 import { useShop } from '../context/ShopContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, Truck, ShieldCheck, Heart, Share2, Ruler, ChevronDown } from 'lucide-react';

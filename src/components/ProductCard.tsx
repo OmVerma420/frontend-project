@@ -4,9 +4,9 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Eye } from 'lucide-react';
-import { Product } from '../types';
+import { Product } from '../../types';
 import { useShop } from '../context/ShopContext';
-import { FALLBACK_IMAGE } from '../constants';
+import { FALLBACK_IMAGE } from '../../constants';
 
 export const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
   const [isHovered, setIsHovered] = useState(false);

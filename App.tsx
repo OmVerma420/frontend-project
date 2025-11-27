@@ -1,14 +1,14 @@
 // @ts-nocheck
 import React from 'react';
 import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { Navbar } from './components/Navbar';
-import { Home } from './pages/Home';
-import { Shop } from './pages/Shop';
-import { ProductDetail } from './pages/ProductDetail';
-import { Cart } from './pages/Cart';
-import { Footer } from './components/Footer';
-import { ShopProvider } from './context/ShopContext';
-import { CartDrawer } from './components/CartDrawer';
+import { Navbar } from './src/components/Navbar';
+import { Home } from './src/pages/Home';
+import { Shop } from './src/pages/Shop';
+import { ProductDetail } from './src/pages/ProductDetail';
+import { Cart } from './src/pages/Cart';
+import { Footer } from './src/components/Footer';
+import { ShopProvider } from './src/context/ShopContext';
+import { CartDrawer } from './src/components/CartDrawer';
 import { useEffect } from 'react';
 
 const ScrollToTop = () => {

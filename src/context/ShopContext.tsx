@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { CartItem, Product, ShopContextType, Review } from '../types';
-import { INITIAL_REVIEWS } from '../constants';
+import { CartItem, Product, ShopContextType, Review } from '../../types';
+import { INITIAL_REVIEWS } from '../../constants';
 
 const ShopContext = createContext<ShopContextType | undefined>(undefined);
 

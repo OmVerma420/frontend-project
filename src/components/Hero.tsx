@@ -3,7 +3,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
-import { FALLBACK_IMAGE } from '../constants';
+import { FALLBACK_IMAGE } from '../../constants';
 
 export const Hero: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
