@@ -227,7 +227,7 @@ export const Home: React.FC = () => {
     <div className="relative w-full max-w-4xl aspect-video">
       <iframe
         className="w-full h-full rounded-xl"
-        src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
+        src=""
         title="Campaign Video"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen
