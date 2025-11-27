@@ -114,6 +114,34 @@
         -webkit-background-clip: text;
         color: transparent;
       }
+      @keyframes smooth-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.smooth-marquee {
+  animation: smooth-scroll 10s linear infinite;
+  will-change: transform;
+}
+.text-stroke-strong {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
+}
+
+.text-stroke-hover {
+  transition: color 0.3s ease, -webkit-text-stroke 0.3s ease;
+}
+
+.text-stroke-hover:hover {
+  color: #D4AF37; /* gold highlight */
+  -webkit-text-stroke: 1px rgba(212, 175, 55, 0.8);
+}
+
+
     </style>
   <script type="importmap">
 {

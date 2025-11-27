@@ -28,57 +28,50 @@ export const Home: React.FC = () => {
       <Hero />
 
       {/* Infinite Text Marquee Strip */}
-      <div className="py-20 border-y border-white/5 overflow-hidden relative bg-noir-900">
-        <div className="animate-marquee whitespace-nowrap flex gap-12 items-center opacity-40 hover:opacity-100 transition-opacity duration-500">
-          {[...Array(8)].map((_, i) => (
-            <span key={i} className="text-6xl md:text-8xl font-serif font-bold text-stroke uppercase tracking-tighter cursor-default">
-              New Collection 2025 — Noir Édition — 
-            </span>
-          ))}
-        </div>
-      </div>
+     <div className="py-20 border-y border-white/5 overflow-hidden relative bg-noir-900">
+  <div className="animate-marquee whitespace-nowrap flex gap-12 items-center opacity-60 hover:opacity-100 transition-opacity duration-500">
+    {[...Array(8)].map((_, i) => (
+      <span 
+        key={i}
+        className="text-5xl md:text-7xl font-serif font-bold uppercase tracking-tight 
+                   text-stroke-strong text-stroke-hover"
+      >
+        New Collection 2025 — Noir Édition —
+      </span>
+    ))}
+  </div>
+</div>
+
 
       {/* Infinite Image Scroll (Marquee) Section */}
-      <section className="py-32 relative overflow-hidden bg-noir-950">
-        <div className="px-6 mb-16 flex flex-col md:flex-row justify-between items-end gap-6 max-w-7xl mx-auto">
-          <div>
-            <h3 className="text-gold-500 tracking-[0.2em] uppercase text-xs mb-4 font-bold">Editorial Campaign</h3>
-            <h2 className="text-4xl md:text-6xl font-serif text-white leading-none">Urban<br/>Deconstruction</h2>
-          </div>
-          <Link to="/shop" className="group text-white border-b border-white pb-1 hover:text-gold-500 hover:border-gold-500 transition-all text-sm uppercase tracking-widest flex items-center gap-2">
-            View Collection 
-            <ArrowRight size={14} className="group-hover:translate-x-2 transition-transform" />
-          </Link>
+      {/* SUPER SMOOTH IMAGE MARQUEE */}
+<div className="overflow-hidden w-full py-10">
+  <div className="flex gap-6 smooth-marquee">
+    {[...SCROLL_IMAGES, ...SCROLL_IMAGES].map((img, idx) => (
+      <Link
+        to="/shop"
+        key={idx}
+        className="relative block w-[280px] h-[400px] md:w-[400px] md:h-[550px] flex-shrink-0 group overflow-hidden cursor-pointer"
+      >
+        <img 
+          src={img}
+          className="w-full h-full object-cover object-top transition-all duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+          alt={`Editorial Look ${idx}`}
+          onError={(e) => {
+            (e.target as HTMLImageElement).src = FALLBACK_IMAGE;
+          }}
+        />
+
+        <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
+
+        <div className="absolute bottom-6 left-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 bg-black/60 backdrop-blur px-4 py-2">
+          <p className="text-white font-serif text-xl italic">Explore Look</p>
         </div>
-        
-        {/* Auto Scrolling Marquee */}
-        <div className="flex overflow-hidden">
-          <motion.div 
-            className="flex gap-6 pl-6"
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{ ease: "linear", duration: 30, repeat: Infinity }}
-            style={{ width: "max-content" }}
-          >
-             {/* Duplicate array for seamless loop */}
-             {[...SCROLL_IMAGES, ...SCROLL_IMAGES, ...SCROLL_IMAGES].map((img, idx) => (
-               <Link to="/shop" key={idx} className="relative block w-[280px] h-[400px] md:w-[400px] md:h-[550px] flex-shrink-0 group overflow-hidden cursor-pointer">
-                 <img 
-                   src={img}
-                   className="w-full h-full object-cover object-top transition-all duration-700 group-hover:scale-110 group-hover:grayscale-0 grayscale"
-                   alt={`Editorial Look ${idx}`}
-                   onError={(e) => {
-                       (e.target as HTMLImageElement).src = FALLBACK_IMAGE;
-                   }}
-                 />
-                 <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
-                 <div className="absolute bottom-6 left-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 bg-black/60 backdrop-blur px-4 py-2">
-                    <p className="text-white font-serif text-xl italic">Explore Look</p>
-                 </div>
-               </Link>
-             ))}
-          </motion.div>
-        </div>
-      </section>
+      </Link>
+    ))}
+  </div>
+</div>
+
 
       {/* Featured Product Grid */}
       <section className="max-w-7xl mx-auto px-6 py-24">
